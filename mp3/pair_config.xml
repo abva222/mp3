@@ -5,8 +5,43 @@
   <numExecutors>2</numExecutors>
   <mode>NORMAL</mode>
   <useSecurity>true</useSecurity>
-  <authorizationStrategy class="hudson.security.AuthorizationStrategy$Unsecured"/>
-  <securityRealm class="hudson.security.SecurityRealm$None"/>
+  <authorizationStrategy class="hudson.security.GlobalMatrixAuthorizationStrategy">
+    <permission>com.cloudbees.plugins.credentials.CredentialsProvider.Create:abva222</permission>
+    <permission>com.cloudbees.plugins.credentials.CredentialsProvider.Delete:abva222</permission>
+    <permission>com.cloudbees.plugins.credentials.CredentialsProvider.ManageDomains:abva222</permission>
+    <permission>com.cloudbees.plugins.credentials.CredentialsProvider.Update:abva222</permission>
+    <permission>com.cloudbees.plugins.credentials.CredentialsProvider.View:abva222</permission>
+    <permission>hudson.model.Computer.Build:abva222</permission>
+    <permission>hudson.model.Computer.Configure:abva222</permission>
+    <permission>hudson.model.Computer.Connect:abva222</permission>
+    <permission>hudson.model.Computer.Create:abva222</permission>
+    <permission>hudson.model.Computer.Delete:abva222</permission>
+    <permission>hudson.model.Computer.Disconnect:abva222</permission>
+    <permission>hudson.model.Computer.Provision:abva222</permission>
+    <permission>hudson.model.Hudson.Administer:abva222</permission>
+    <permission>hudson.model.Hudson.Read:abva222</permission>
+    <permission>hudson.model.Item.Build:abva222</permission>
+    <permission>hudson.model.Item.Cancel:abva222</permission>
+    <permission>hudson.model.Item.Configure:abva222</permission>
+    <permission>hudson.model.Item.Create:abva222</permission>
+    <permission>hudson.model.Item.Delete:abva222</permission>
+    <permission>hudson.model.Item.Discover:abva222</permission>
+    <permission>hudson.model.Item.Move:abva222</permission>
+    <permission>hudson.model.Item.Read:abva222</permission>
+    <permission>hudson.model.Item.Workspace:abva222</permission>
+    <permission>hudson.model.Run.Delete:abva222</permission>
+    <permission>hudson.model.Run.Replay:abva222</permission>
+    <permission>hudson.model.Run.Update:abva222</permission>
+    <permission>hudson.model.View.Configure:abva222</permission>
+    <permission>hudson.model.View.Create:abva222</permission>
+    <permission>hudson.model.View.Delete:abva222</permission>
+    <permission>hudson.model.View.Read:abva222</permission>
+    <permission>hudson.scm.SCM.Tag:abva222</permission>
+  </authorizationStrategy>
+  <securityRealm class="hudson.security.HudsonPrivateSecurityRealm">
+    <disableSignup>true</disableSignup>
+    <enableCaptcha>false</enableCaptcha>
+  </securityRealm>
   <disableRememberMe>false</disableRememberMe>
   <projectNamingStrategy class="jenkins.model.ProjectNamingStrategy$DefaultProjectNamingStrategy"/>
   <workspaceDir>${JENKINS_HOME}/workspace/${ITEM_FULLNAME}</workspaceDir>
